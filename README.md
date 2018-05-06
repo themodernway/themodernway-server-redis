@@ -48,9 +48,9 @@ http://docs.themodernway.com/documents/reports/themodernway-server-redis-v2/cve/
 
 SonarQube URL:
 
-https://sonarcloud.io/dashboard?id=com.themodernway%3Athemodernway-server-redis
+https://sonarcloud.io/dashboard?id=com.themodernway%3Athemodernway-server-redis-v2
 
-![alt SonarQube](https://sonarcloud.io/api/project_badges/quality_gate?project=com.themodernway%3Athemodernway-server-redis "SonarQube")
+![alt SonarQube](https://sonarcloud.io/api/project_badges/measure?project=com.themodernway%3Athemodernway-server-redis-v2&metric=alert_status "SonarQube")
 
 License:
 
