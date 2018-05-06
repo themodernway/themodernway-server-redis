@@ -81,7 +81,7 @@ task doJavaDocs(type: Javadoc) {
     classpath = sourceSets.main.compileClasspath
     destinationDir = project.file("${buildDir}/docs/javadoc")
 	includes = [
-        'com/themodernway/server/rest/**'
+        'com/themodernway/server/redis/**'
     ]
     title = "${getProjectCommonName()}"
     (options as StandardJavadocDocletOptions).with {
@@ -220,15 +220,15 @@ def String getBuildGITHomeURL() {
 }
 
 def String getBuildGITCommitHash() {
-    ''//getBuildGITHomeURL() + '/commit/' + Grgit.open(project.file('.')).head().id
+    getBuildGITHomeURL() + '/commit/' + Grgit.open(project.file('.')).head().id
 }
 
 def String getBuildGITCommitUser() {
-    ''//Grgit.open(project.file('.')).head().committer.email
+    Grgit.open(project.file('.')).head().committer.email
 }
 
 def String getBuildGITCommitMessage() {
-    ''//Grgit.open(project.file('.')).head().shortMessage
+    Grgit.open(project.file('.')).head().shortMessage
 }
 
 repositories {
