@@ -19,17 +19,15 @@ package com.themodernway.server.redis.support.spring;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 
+import com.themodernway.server.core.AbstractCoreLoggingBase;
 import com.themodernway.server.core.ICoreCommon;
 import com.themodernway.server.core.logging.LoggingOps;
 
-public class RedisDescriptor implements IRedisDescriptor, ICoreCommon, BeanNameAware, DisposableBean
+public class RedisDescriptor extends AbstractCoreLoggingBase implements IRedisDescriptor, ICoreCommon, BeanNameAware, DisposableBean
 {
-    private final Logger        m_logger = LoggingOps.getLogger(getClass());
-
     private final AtomicBoolean m_isopen = new AtomicBoolean(false);
 
     private String              m_named;
@@ -56,12 +54,6 @@ public class RedisDescriptor implements IRedisDescriptor, ICoreCommon, BeanNameA
             }
             m_isopen.set(false);
         }
-    }
-
-    @Override
-    public Logger logger()
-    {
-        return m_logger;
     }
 
     @Override
